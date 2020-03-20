@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @Repository
 @RequiredArgsConstructor
-public class AccountRepositoryImpl implements AccountRepository {
+public class AccountRepositoryDefault implements AccountRepository {
 
   private final AccountDao accountDao;
 
