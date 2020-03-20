@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - changeSet:
+      id: fal-1
+      author: fal
+      changes:
+        - createTable:
+            tableName: Account
+            columns:
+              - column:
+                  name: id
+                  type: decimal
+              - column:
+                  name: number
+                  type: varchar
+              - column:
+                  name: balance
+                  type: currency

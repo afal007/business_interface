@@ -1,1 +1,6 @@
 rootProject.name = 'business_interface'
+include 'business:logic'
+include 'business:gateway'
+include 'configuration'
+include 'dal'
+include 'web'
