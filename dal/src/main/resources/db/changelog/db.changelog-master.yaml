@@ -15,3 +15,43 @@ databaseChangeLog:
               - column:
                   name: balance
                   type: currency
+  - changeSet:
+      id: fal-2
+      author: fal
+      changes:
+        - insert:
+            tableName: account
+            columns:
+              - column:
+                  name: id
+                  value: -1
+              - column:
+                  name: number
+                  value: 1
+              - column:
+                  name: balance
+                  value: 100
+        - insert:
+            tableName: account
+            columns:
+              - column:
+                  name: id
+                  value: -2
+              - column:
+                  name: number
+                  value: 2
+              - column:
+                  name: balance
+                  value: 200
+        - insert:
+            tableName: account
+            columns:
+              - column:
+                  name: id
+                  value: -3
+              - column:
+                  name: number
+                  value: 3
+              - column:
+                  name: balance
+                  value: 300

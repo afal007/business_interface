@@ -1,11 +1,9 @@
 package ru.afal.bi.dal.handler;
 
-import org.springframework.stereotype.Component;
 import ru.afal.bi.business.gateway.model.Account;
 
 import java.math.BigDecimal;
 
-@Component
 public enum AccountProcedureHandler implements Account {
   INSTANCE;
 

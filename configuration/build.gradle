@@ -4,6 +4,7 @@ dependencies {
   implementation project(':business:logic')
   implementation project(':business:gateway')
 
+  implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
   implementation 'org.springframework.boot:spring-boot-starter'
   developmentOnly 'org.springframework.boot:spring-boot-devtools'
   annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
