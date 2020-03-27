@@ -8,7 +8,10 @@ databaseChangeLog:
             columns:
               - column:
                   name: id
-                  type: decimal
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
               - column:
                   name: number
                   type: varchar

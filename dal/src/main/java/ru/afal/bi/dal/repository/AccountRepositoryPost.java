@@ -14,4 +14,9 @@ public class AccountRepositoryPost implements AccountRepository {
   public Optional<? extends Account> getByNumber(String accountNumber) {
     return Optional.of(AccountProcedureHandler.INSTANCE);
   }
+
+  @Override
+  public void save(Account account) {
+
+  }
 }

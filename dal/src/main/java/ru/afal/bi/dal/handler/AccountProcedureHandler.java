@@ -8,6 +8,11 @@ public enum AccountProcedureHandler implements Account {
   INSTANCE;
 
   @Override
+  public String getNumber() {
+    return null;
+  }
+
+  @Override
   public BigDecimal getBalance() {
     return procedureToDB();
   }

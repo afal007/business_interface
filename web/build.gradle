@@ -1,5 +1,6 @@
 dependencies {
   implementation project(':business:logic')
+  implementation project(':business:gateway')
 
   api 'io.springfox:springfox-swagger2:2.9.2'
   api 'io.springfox:springfox-swagger-ui:2.9.2'
