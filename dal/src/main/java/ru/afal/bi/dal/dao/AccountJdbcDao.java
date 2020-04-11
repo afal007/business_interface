@@ -1,6 +1,7 @@
 package ru.afal.bi.dal.dao;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Profile;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import ru.afal.bi.dal.model.AccountEntity;
@@ -10,6 +11,7 @@ import java.sql.SQLException;
 import java.util.Optional;
 
 @Repository
+@Profile("pureSql")
 @RequiredArgsConstructor
 public class AccountJdbcDao implements AccountDao {
 

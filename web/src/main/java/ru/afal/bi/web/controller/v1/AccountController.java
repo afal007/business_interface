@@ -1,4 +1,4 @@
-package ru.afal.bi.web.controller;
+package ru.afal.bi.web.controller.v1;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -9,7 +9,7 @@ import ru.afal.bi.business.logic.service.AccountService;
 import ru.afal.bi.web.api.AccountDTO;
 
 @RestController
-@RequestMapping("/account")
+@RequestMapping("/v1/account")
 @RequiredArgsConstructor
 public class AccountController {
 

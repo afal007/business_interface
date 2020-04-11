@@ -1,4 +1,4 @@
-package ru.afal.bi.web.controller;
+package ru.afal.bi.web.controller.v1;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
