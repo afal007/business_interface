@@ -5,22 +5,60 @@ plugins {
   id 'java'
 }
 
-subprojects {
-  group = 'ru.afal.bi'
-  version = '0.0.1-SNAPSHOT'
-  sourceCompatibility = '13'
+allprojects {
+  apply from: rootProject.file('versions.gradle')
 
-  apply plugin: 'java'
-  apply plugin: 'io.spring.dependency-management'
-  apply plugin: 'java-library'
+  tasks.withType(JavaCompile) {
+    sourceCompatibility = 13
+    targetCompatibility = 13
+    options.encoding = 'UTF-8'
+  }
 
   repositories {
     jcenter()
   }
+}
+
+subprojects {
+  apply plugin: 'idea'
+  apply plugin: 'java'
+  apply plugin: 'java-library'
+  apply plugin: 'io.spring.dependency-management'
 
   dependencyManagement {
     imports {
-      mavenBom("org.springframework.boot:spring-boot-dependencies:2.2.5.RELEASE")
+      mavenBom("org.springframework.boot:spring-boot-dependencies:${versions['spring-boot']}")
+    }
+  }
+
+  sourceSets {
+    main {
+      java {
+        srcDirs = ['src/main/java']
+      }
+      resources {
+        srcDirs = ['src/main/resources']
+      }
+    }
+    test {
+      java {
+        srcDirs = ['src/test/java']
+      }
+      resources {
+        srcDirs = ['src/test/resources']
+      }
+    }
+  }
+
+  javadoc {
+    source = sourceSets.main.allJava
+    classpath = configurations.compile
+    options {
+      charSet 'UTF-8'
+      encoding 'UTF-8'
+      docEncoding 'UTF-8'
+      failOnError false
+      linkSource true
     }
   }
 
@@ -35,7 +73,9 @@ subprojects {
   }
 
   dependencies {
-    compileOnly 'org.projectlombok:lombok'
-    annotationProcessor 'org.projectlombok:lombok'
+    compileOnly "org.projectlombok:lombok"
+    implementation "org.jetbrains:annotations:${versions['jetbrains']}"
+    implementation group: 'org.jetbrains', name: 'annotations', version: versions['jetbrains']
+    annotationProcessor "org.projectlombok:lombok"
   }
 }

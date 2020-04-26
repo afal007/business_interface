@@ -1,0 +1,4 @@
+ext.versions = [
+  'jetbrains'  : '15.0',
+  'spring-boot': '2.2.5.RELEASE'
+]
