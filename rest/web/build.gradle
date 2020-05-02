@@ -3,15 +3,12 @@ dependencies {
   implementation project(':rest:business:logic')
   implementation project(':rest:business:gateway')
 
-  api 'io.springfox:springfox-swagger2:2.9.2'
-  api 'io.springfox:springfox-swagger-ui:2.9.2'
+  api group: 'io.springfox', name: 'springfox-swagger2', version: versions['swagger']
+  api group: 'io.springfox', name: 'springfox-swagger-ui', version: versions['swagger']
   implementation 'org.springframework.boot:spring-boot-starter-web'
   implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
   implementation 'org.springframework.boot:spring-boot-starter-web-services'
   implementation 'org.springframework.boot:spring-boot-starter-hateoas'
   implementation 'org.springframework.boot:spring-boot-starter-webflux'
-  testImplementation('org.springframework.boot:spring-boot-starter-test') {
-    exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-  }
   testImplementation 'io.projectreactor:reactor-test'
 }

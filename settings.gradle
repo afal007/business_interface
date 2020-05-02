@@ -9,4 +9,6 @@ include 'soap:dal'
 include 'soap:business'
 include 'soap:configuration'
 include 'soap:web'
+include 'core'
+include 'core:common'
 

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+  xmlns:schema="bankws-schema"
+  name="BankWS"
+  targetNamespace="http://localhost:8080/BankWS.wsdl">
+  <wsdl:types>
+    <xs:import schemaLocation="BankWS.xsd"/>
+  </wsdl:types>
+
+  <wsdl:message name="GetBankByBicInput">
+    <wsdl:part name="body" element="schema:GetBankByBicRequest"/>
+  </wsdl:message>
+  <wsdl:message name="GetBankByBicOutput">
+    <wsdl:part name="body" element="schema:GetBankByBicResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetBankByBicFault">
+    <wsdl:part name="body" element="schema:GetBankByBicError"/>
+  </wsdl:message>
+
+  <wsdl:portType name="BankPortType">
+    <wsdl:operation name="GetBankByBic">
+      <wsdl:input message="GetBankByBicInput"/>
+      <wsdl:output message="GetBankByBicOutput"/>
+      <wsdl:fault name="GetBankByBicFault" message="GetBankByBicFault"/>
+    </wsdl:operation>
+  </wsdl:portType>
+
+  <wsdl:binding name="BankWSSoapBinding" type="BankPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="GetBankByBic">
+      <soap:operation soapAction="bankws-action-GetBankByBic"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+
+  <wsdl:service name="BankWS">
+    <wsdl:documentation>Service for operations with banks.</wsdl:documentation>
+    <wsdl:port name="BankWSPort" binding="BankWSSoapBinding">
+      <soap:address location="http://localhost:4000/bankws"/>
+    </wsdl:port>
+  </wsdl:service>
+
+</wsdl:definitions>

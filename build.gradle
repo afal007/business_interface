@@ -73,9 +73,12 @@ subprojects {
   }
 
   dependencies {
-    compileOnly "org.projectlombok:lombok"
-    implementation "org.jetbrains:annotations:${versions['jetbrains']}"
     implementation group: 'org.jetbrains', name: 'annotations', version: versions['jetbrains']
+
+    implementation group: 'org.mapstruct', name: 'mapstruct', version: versions['mapstruct']
+    annotationProcessor group: 'org.mapstruct', name: 'mapstruct-processor', version: versions['mapstruct']
+
+    compileOnly "org.projectlombok:lombok"
     annotationProcessor "org.projectlombok:lombok"
   }
 }

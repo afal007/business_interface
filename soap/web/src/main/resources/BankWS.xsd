@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="bankws-schema"
+  elementFormDefault="qualified">
+
+  <xs:element name="GetBankByBicRequest">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="bic" type="xs:string"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="GetBankByBicResponse">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="bic" type="xs:string"/>
+        <xs:element name="name" type="xs:string"/>
+        <xs:element name="address" type="xs:string"/>
+        <xs:element name="swiftBic" type="xs:string" minOccurs="0"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="GetBankByBicFault">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="code" type="xs:unsignedShort"/>
+        <xs:element name="message" type="xs:string"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

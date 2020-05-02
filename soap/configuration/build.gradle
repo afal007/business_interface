@@ -1,0 +1,12 @@
+dependencies {
+  implementation project(':soap:dal')
+  implementation project(':soap:web')
+  implementation project(':soap:business')
+
+  implementation 'org.springframework.boot:spring-boot-starter'
+  implementation 'org.springframework.boot:spring-boot-starter-web'
+  implementation 'org.springframework.boot:spring-boot-starter-security'
+  implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+  developmentOnly 'org.springframework.boot:spring-boot-devtools'
+  annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+}

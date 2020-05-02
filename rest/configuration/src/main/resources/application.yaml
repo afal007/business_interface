@@ -1,2 +1,10 @@
+server:
+  port: 4001
+
+spring:
+  jpa:
+    open-in-view: false
+
 balance:
   default-balance: 12.43
+
