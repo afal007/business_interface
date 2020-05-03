@@ -4,7 +4,7 @@ import bankws_schema.GetBankByBicResponse;
 import org.mapstruct.Mapper;
 import ru.afal.bi.soap.business.model.Bank;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface BankSoapMapper {
   GetBankByBicResponse map(Bank bank);
 }

@@ -1,12 +1,14 @@
 dependencies {
   implementation project(':rest:dal')
   implementation project(':rest:web')
+  implementation project(':core:bankws')
   implementation project(':rest:business:logic')
   implementation project(':rest:business:gateway')
 
+  implementation 'org.springframework.ws:spring-ws-core'
   implementation 'org.springframework.boot:spring-boot-starter'
   implementation 'org.springframework.boot:spring-boot-starter-web'
-  implementation 'org.springframework.boot:spring-boot-starter-hateoas'
+//  implementation 'org.springframework.boot:spring-boot-starter-hateoas' TODO: breaks swagger
   implementation 'org.springframework.boot:spring-boot-starter-security'
   implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
   developmentOnly 'org.springframework.boot:spring-boot-devtools'

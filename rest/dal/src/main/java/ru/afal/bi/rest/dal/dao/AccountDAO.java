@@ -7,6 +7,6 @@ import ru.afal.bi.rest.dal.model.AccountEntity;
 import java.util.Optional;
 
 @Repository
-public interface AccountDao extends CrudRepository<AccountEntity, Long> {
+public interface AccountDAO extends CrudRepository<AccountEntity, Long> {
   Optional<AccountEntity> findByNumber(String accountNumber);
 }

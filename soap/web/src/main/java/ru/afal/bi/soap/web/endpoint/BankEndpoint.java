@@ -18,7 +18,7 @@ public class BankEndpoint {
   private final BankRepository bankRepository;
   private final BankSoapMapper bankSoapMapper;
 
-  @PayloadRoot(localPart = "GetBankByBicRequest")
+  @PayloadRoot(localPart = "GetBankByBicRequest", namespace = "bankws-schema")
   @ResponsePayload
   public GetBankByBicResponse getBankByBic(@RequestPayload GetBankByBicRequest getBankByBicRequest) {
     return bankRepository.findByBic(getBankByBicRequest.getBic())

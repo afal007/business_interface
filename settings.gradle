@@ -11,4 +11,5 @@ include 'soap:configuration'
 include 'soap:web'
 include 'core'
 include 'core:common'
+include 'core:bankws'
 

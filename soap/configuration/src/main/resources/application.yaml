@@ -1,2 +1,6 @@
 server:
   port: 4000
+
+logging:
+  level:
+    web: debug

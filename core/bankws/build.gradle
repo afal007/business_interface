@@ -6,7 +6,7 @@ configurations {
 task genJaxb {
   ext.sourcesDir = "${buildDir}/generated/jaxb"
   ext.classesDir = "${buildDir}/classes/jaxb"
-  ext.schema = "src/main/resources/BankWS.xsd"
+  ext.schema = "http://localhost:4000/bankWS/banks.wsdl"
 
   outputs.dir classesDir
 
@@ -16,7 +16,7 @@ task genJaxb {
       mkdir(dir: sourcesDir)
       mkdir(dir: classesDir)
 
-      xjc(destdir: sourcesDir, schema: schema) {
+      xjc(destdir: sourcesDir, schema: schema, package: 'ru.afal.bi.core.bankws.wsdl') {
         arg(value: "-wsdl")
         produces(dir: sourcesDir, includes: "**/*.java")
       }
@@ -48,11 +48,13 @@ dependencies {
   implementation project(':core:common')
   implementation project(':soap:business')
 
+  implementation 'org.springframework.ws:spring-ws-core'
+
   implementation group: 'com.sun.xml.ws', name: 'jaxws-rt', version: '2.3.3'
 
   implementation group: 'wsdl4j', name: 'wsdl4j'
   implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web-services'
 
   jaxb group: 'org.glassfish.jaxb', name: 'jaxb-xjc'
-  implementation(files(genJaxb.classesDir).builtBy(genJaxb))
+  api(files(genJaxb.classesDir).builtBy(genJaxb))
 }

@@ -13,7 +13,7 @@ import java.util.Optional;
 @Repository
 @Profile("pureSql")
 @RequiredArgsConstructor
-public class AccountJdbcDao implements AccountDao {
+public class AccountJdbcDAO implements AccountDAO {
 
   private final JdbcTemplate template;
 

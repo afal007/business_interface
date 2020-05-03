@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 import ru.afal.bi.rest.business.gateway.model.Account;
 import ru.afal.bi.rest.business.gateway.repository.AccountRepository;
-import ru.afal.bi.rest.dal.dao.AccountDao;
+import ru.afal.bi.rest.dal.dao.AccountDAO;
 import ru.afal.bi.rest.dal.model.AccountEntity;
 
 import java.util.Optional;
@@ -13,7 +13,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class AccountRepositoryDefault implements AccountRepository {
 
-  private final AccountDao accountDao;
+  private final AccountDAO accountDao;
 
   @Override
   public Optional<? extends Account> getByNumber(String accountNumber) {
